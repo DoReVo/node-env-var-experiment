@@ -1,0 +1,16 @@
+version: "3"
+
+networks:
+  node:
+
+services:
+  node-app:
+    build: .
+    restart: always
+    ports:
+      - 6565:3000
+    environment:
+      MSG: "THIS IS DEFINED IN COMPOSE FILE BRO"
+      INSIDE_FILE: "WAS OVERWRITED BRO!!!"
+    networks:
+      - node
